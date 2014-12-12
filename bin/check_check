@@ -162,7 +162,7 @@ def main(args)
 
   total_results = ["OK", "WARNING", "CRITICAL", "UNKNOWN"].inject(0) {|aggr,state| aggr += results[state].length}
   # Output a summary line
-  ["OK", "WARNING", "CRITICAL", "UNKNOWN"].each do | state|
+  ["CRITICAL", "WARNING", "UNKNOWN", "OK"].each do | state|
     print "#{state}=#{results[state].length} "
   end
   print "services=/#{settings.service_pattern}/ "
